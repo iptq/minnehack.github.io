@@ -2,21 +2,26 @@ url: https://minnehack.github.io
 baseurl: 
 
 # Site settings
-title: Awesome Title
+title: MinneHack 2015
 email: your-email@domain.com
 description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
 
 # Color settings (hex-codes without the leading hash-tag)
+# color:
+#   primary: fed136
+#   secondary: fec503  
+#   secondary-dark: 333
+
 color:
-  primary: fed136
-  secondary: fec503  
+  primary: E62E2E
+  secondary: D64A42
   secondary-dark: 333
 
 # Team names, titles and social links
 people:
-- name: Kay Garland
+- name: Flying Walrus
   pic: 1
-  position: Lead Designer
+  position: Carleton College
   social:
     - title: twitter
       url: #
@@ -25,9 +30,9 @@ people:
     - title: stack-overflow
       url: #
 
-- name: Larry Parker
+- name: Hack To the Future
   pic: 2
-  position: Lead Marketer
+  position: University of Minnesota
   social:
     - title: twitter
       url: #
@@ -36,9 +41,9 @@ people:
     - title: linkedin
       url: #
 
-- name: Diana Petersen
+- name: Beta Eagles
   pic: 3
-  position: Lead Developer
+  position: Augsburg College
   social:
     - title: twitter
       url: #
