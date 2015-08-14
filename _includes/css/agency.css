@@ -176,7 +176,10 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-brand {
-    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+    /*text-transform: uppercase;*/
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #{{ site.color.primary }};
 }
 
@@ -266,7 +269,7 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(../img/header-bg.jpg);
+    background-image: url(../img/header-bg-2.jpg);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -655,9 +658,9 @@ aside.clients img {
 
 section#contact {
     background-color: #222;
-    background-image: url(../img/map-image.png);
+    background-image: url(../img/patterns/footer_lodyas.png);
     background-position: center;
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;*/
 }
 
 section#contact .section-heading {
