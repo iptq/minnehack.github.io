@@ -1,6 +1,6 @@
 $(function() {
 
-    $("input,textarea").jqBootstrapValidation({
+    $("[id*=registrationForm] input,textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
             // additional error messages or events
@@ -14,18 +14,6 @@ $(function() {
             var phone = $("input#phone").val();
             var teamname = $("input#teamname").val();
             var message = $("textarea#message").val();
-
-            if (!name ||
-                !school ||
-                !email)
-            {
-                $('#success').html("<div class='alert alert-danger'>");
-                $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                  .append("</button>");
-                $('#success > .alert-danger').append("<strong>Please fill in the required fields: name, school, email.");
-                $('#success > .alert-danger').append('</div>');
-                return;
-            }
 
             var input = { name: name,
                           school: school,
@@ -42,8 +30,11 @@ $(function() {
               }
             }
 
-            console.log("Registering: ");
+            console.log("Registering...");
             console.log(input);
+            if (true) }
+              return;
+            }
 
             var firebase_callback =
               function(arg) {
