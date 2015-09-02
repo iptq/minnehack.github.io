@@ -1,6 +1,5 @@
 $(function() {
-
-    $("[id*=registrationForm] input,textarea").jqBootstrapValidation({
+    $("#registrationForm input,textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
             // additional error messages or events
@@ -8,12 +7,13 @@ $(function() {
         submitSuccess: function($form, event) {
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
-            var name = $("input#name").val();
-            var school = $("input#school").val();
-            var email = $("input#email").val();
-            var phone = $("input#phone").val();
-            var teamname = $("input#teamname").val();
-            var message = $("textarea#message").val();
+            
+            var name =     $("#registrationForm input#name").val();
+            var school =   $("#registrationForm input#school").val();
+            var email =    $("#registrationForm input#email").val();
+            var phone =    $("#registrationForm input#phone").val();
+            var teamname = $("#registrationForm input#teamname").val();
+            var message =  $("$registrationForm textarea#message").val();
 
             var input = { name: name,
                           school: school,
