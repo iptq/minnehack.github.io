@@ -27,6 +27,13 @@ $(function() {
                 return;
             }
 
+            var input = { name: name,
+                          school: school,
+                          email: email,
+                          phone: phone,
+                          teamname: teamname,
+                          message: message }
+
             for field in input {
               // Filter out empty, non-required fields
               if (input.hasOwnProperty(field) &&
@@ -34,6 +41,9 @@ $(function() {
                 delete input[field];
               }
             }
+
+            console.log("Registering: ");
+            console.log(input);
 
             var firebase_callback =
               function(arg) {
@@ -61,14 +71,6 @@ $(function() {
 
             var registrationDB = new Firebase("https://minnehack-register.firebaseio.com");
 
-            var input = { name: name,
-                          school: school,
-                          email: email,
-                          phone: phone,
-                          teamname: teamname,
-                          message: message }
-
-            console.log(input);
 
             registrationDB.push(input, firebase_callback);
         },
