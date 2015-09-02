@@ -14,11 +14,25 @@ $(function() {
             var phone = $("input#phone").val();
             var teamname = $("input#teamname").val();
             var message = $("textarea#message").val();
-            
-            var firstName = name; // For Success/Failure Message
-            // Check for white space in name for Success/Fail message
-            if (firstName.indexOf(' ') >= 0) {
-                firstName = name.split(' ').slice(0, -1).join(' ');
+
+            if (typeof name == 'undefined' ||
+                typeof school == 'undefined' ||
+                typeof email == 'undefined')
+            {
+                $('#success').html("<div class='alert alert-danger'>");
+                $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                  .append("</button>");
+                $('#success > .alert-danger').append("<strong>Please fill in the required fields: name, school, email.");
+                $('#success > .alert-danger').append('</div>');
+                return;
+            }
+
+            for field in input {
+              // Filter out empty, non-required fields
+              if (input.hasOwnProperty(field) &&
+                  typeof field == 'undefined') {
+                delete input[field];
+              }
             }
 
             var firebase_callback =
