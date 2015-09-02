@@ -32,7 +32,7 @@ $(function() {
 
             console.log("Registering...");
             console.log(input);
-            if (true) }
+            if (true) {
               return;
             }
 
