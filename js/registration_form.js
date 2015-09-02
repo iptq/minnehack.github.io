@@ -13,7 +13,7 @@ $(function() {
             var email =    $("#registrationForm input#email").val();
             var phone =    $("#registrationForm input#phone").val();
             var teamname = $("#registrationForm input#teamname").val();
-            var message =  $("$registrationForm textarea#message").val();
+            var message =  $("#registrationForm textarea#message").val();
 
             var input = { name: name,
                           school: school,
