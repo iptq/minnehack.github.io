@@ -33,9 +33,6 @@ $(function() {
 
             console.log("Registering...");
             console.log(input);
-            if (true) {
-              return;
-            }
 
             var firebase_callback =
               function(arg) {
@@ -86,8 +83,7 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
 
-            console.log("Sending email..." + message);
-            return;
+            console.log("Sending email...");
 
             $.ajax({
                 url: "././mail/contact_me.php",
