@@ -34,7 +34,7 @@ $(function() {
                           teamname: teamname,
                           message: message }
 
-            for field in input {
+            for (field in input) {
               // Filter out empty, non-required fields
               if (input.hasOwnProperty(field) &&
                   typeof field == 'undefined') {
