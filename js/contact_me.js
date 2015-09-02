@@ -37,7 +37,7 @@ $(function() {
             for (field in input) {
               // Filter out empty, non-required fields
               if (input.hasOwnProperty(field) &&
-                  typeof field == 'undefined') {
+                  !input[field]) {
                 delete input[field];
               }
             }
