@@ -15,9 +15,9 @@ $(function() {
             var teamname = $("input#teamname").val();
             var message = $("textarea#message").val();
 
-            if (typeof name == 'undefined' ||
-                typeof school == 'undefined' ||
-                typeof email == 'undefined')
+            if (!name ||
+                !school ||
+                !email)
             {
                 $('#success').html("<div class='alert alert-danger'>");
                 $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
