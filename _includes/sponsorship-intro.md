@@ -1,8 +1,3 @@
----
-layout: default-sponsorship
----
-
-<div class="home">
 ##What is MinneHack?
 
 MinneHack is a regional software development competition. Last year's event included 200+ attendees from 14 colleges and universities across 4 states – making it the largest hackathon in the twin-cities!
@@ -52,4 +47,4 @@ Because MinneHack is a unique opportunity to connect with the most talented and 
 
 ## Other Contributions
 MinneHack is a community event.  Please let do not hesitate to reach out to us if you are interested in contributions that do not fit the packages above: <mailto:acm@cs.umn.edu>
-</div>
+ 
