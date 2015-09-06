@@ -1,6 +1,6 @@
 $(function() {
     // Do bootstrap validation for the registration field
-    $("#registrationForm input,textarea").jqBootstrapValidation({
+    $("#registrationForm").find("input,textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
             // additional error messages or events
@@ -9,27 +9,31 @@ $(function() {
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
             
-            var name =     $("#registrationForm input#name").val();
-            var school =   $("#registrationForm input#school").val();
-            var email =    $("#registrationForm input#email").val();
-            var phone =    $("#registrationForm input#phone").val();
-            var teamname = $("#registrationForm input#teamname").val();
-            var message =  $("#registrationForm textarea#message").val();
+            var name =       $("#registrationForm").find("#name").val();
+            var school =     $("#registrationForm").find("#school").val();
+            var email =      $("#registrationForm").find("#email").val();
+            var phone =      $("#registrationForm").find("#phone").val();
+            var teamname =   $("#registrationForm").find("#teamname").val();
+            var message =    $("#registrationForm").find("#message").val();
+            var transport =  $("#registrationForm").find("#needs-transport").val();
+            var requests =   $("#registrationForm").find("#requests").val();
 
             var input = { name: name,
                           school: school,
                           email: email,
                           phone: phone,
                           teamname: teamname,
-                          message: message }
+                          message: message,
+                          transport: transport,
+                          requests: requests }
 
-            for (field in input) {
-              // Filter out empty, non-required fields
-              if (input.hasOwnProperty(field) &&
-                  !input[field]) {
-                delete input[field];
-              }
-            }
+//            for (field in input) {
+//              // Filter out empty, non-required fields
+//              if (input.hasOwnProperty(field) &&
+//                  !input[field]) {
+//                delete input[field];
+//              }
+//            }
 
             console.log("Registering...");
             console.log(input);
@@ -68,14 +72,14 @@ $(function() {
         },
     });
 
-    $("#contactForm input,textarea").jqBootstrapValidation({
+    $("#contactForm").find("input,textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitSuccess: function($form, event) {
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
-            var name =     $("#contactForm input#name").val();
-            var email =    $("#contactForm input#email").val();
-            var message =  $("#contactForm textarea#message").val();
+            var name =     $("#contactForm").find("#name").val();
+            var email =    $("#contactForm").find("#email").val();
+            var message =  $("#contactForm").find("#message").val();
 
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
