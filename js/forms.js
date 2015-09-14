@@ -90,7 +90,7 @@ $(function() {
             console.log("Sending email...");
 
             $.ajax({
-                url: "http://spyboat.me:8142",
+                url: "http://spyboat.me:8142/",
                 type: "POST",
                 crossDomain: true,
                 data: {
@@ -119,8 +119,6 @@ $(function() {
                         .append("</button>");
                     $('#contact-status > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that our mail server is not responding. Please try again later!");
                     $('#contact-status > .alert-danger').append('</div>');
-                    //clear all fields
-                    // $('#contactForm').trigger("reset");
                 },
             })
         },
