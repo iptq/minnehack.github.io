@@ -15,7 +15,7 @@ $(function() {
             var phone =      $("#registrationForm").find("#phone").val();
             var teamname =   $("#registrationForm").find("#teamname").val();
             var message =    $("#registrationForm").find("#message").val();
-            var transport =  $("#registrationForm").find("#needs-transport").val();
+            var transport =  $("#registrationForm").find("#needs-transport")[0].checked;
             var requests =   $("#registrationForm").find("#requests").val();
 
             var input = { name: name,
