@@ -51,7 +51,7 @@ $(function() {
                     .append('</div>');
 
                   // Clear all fields
-                  $('#contactForm').trigger("reset");
+                  $('#registrationForm').trigger("reset");
                 } else {
                   // Fail message
                   $('#registration-status').html("<div class='alert alert-danger'>");
