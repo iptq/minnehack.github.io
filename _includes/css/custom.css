@@ -1,1 +1,5 @@
 /* CUSTOM CSS */
+
+.panel-heading {
+    color: black !important;
+}
