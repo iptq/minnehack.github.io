@@ -1,0 +1,31 @@
+.padded-row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.sponsor-partner {
+  display: block;
+  max-height: 50vh;
+  width: auto;
+}
+
+.sponsor-t1 {
+  display: block;
+  max-height: 40vh;
+  max-width: 100%;
+  width: auto;
+}
+
+.sponsor-t2 {
+  display: block;
+  max-height: 30vh;
+  max-width: 100%;
+  width: auto;
+}
+
+.sponsor-t3 {
+  display: block;
+  max-height: 20vh;
+  max-width: 100%;
+  width: auto;
+}
