@@ -31,11 +31,16 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="About You (Potential information for sponsors)" id="message"
-                                      style="height:120px;"></textarea>
+                                    <input type="text" class="form-control" placeholder="TShirt Size" required
+                                        data-validation-required-message="Please give your TShirt size (one of XS, S, M, L, XL, XXL)" id="tshirt">
                                     <p class="help-block text-danger"></p>
 
-                                    <textarea class="form-control" placeholder="Are there any accomodations you'd like to ask for (dietary restrictions/etc)?" id="requests"></textarea>
+                                    <textarea class="form-control" placeholder="Are there any accomodations you'd like to ask for (dietary restrictions/etc)?" id="requests"
+                                        style="height:120px;"></textarea>
+                                    <p class="help-block text-danger"></p>
+
+                                    <textarea class="form-control" placeholder="About You (Potential information for sponsors)" id="message"
+                                      style="height:160px;"></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>

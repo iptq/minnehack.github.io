@@ -17,6 +17,7 @@ $(function() {
             var message =    $("#registrationForm").find("#message").val();
             var transport =  $("#registrationForm").find("#needs-transport")[0].checked;
             var requests =   $("#registrationForm").find("#requests").val();
+            var tshirt =     $("#registrationForm").find("#tshirt").val();
 
             var input = { name: name,
                           school: school,
@@ -25,7 +26,8 @@ $(function() {
                           teamname: teamname,
                           message: message,
                           transport: transport,
-                          requests: requests }
+                          requests: requests,
+                          tshirt: tshirt}
 
 //            for (field in input) {
 //              // Filter out empty, non-required fields
@@ -49,6 +51,8 @@ $(function() {
                     .append("<strong>Registration successful! </strong>");
                   $('#registration-status > .alert-success')
                     .append('</div>');
+
+                  console.log("Clearing it?");
 
                   // Clear all fields
                   $('#registrationForm').trigger("reset");
