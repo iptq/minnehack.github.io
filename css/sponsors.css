@@ -6,6 +6,7 @@
 .sponsor-partner {
   display: block;
   max-height: 50vh;
+  max-width: 75%;
   width: auto;
 }
 
@@ -18,7 +19,7 @@
 
 .sponsor-t2 {
   display: block;
-  max-height: 30vh;
+  max-height: 20vh;
   max-width: 100%;
   width: auto;
 }
