@@ -3,8 +3,89 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <!-- <h2 class="section-heading">Register Now!</h2> -->
-                    <h2 class="section-heading">Registration's down for a bit, come back soon</h2>
+                    <h2 class="section-heading">Registration</h2>
                     <!-- <h3 class="section-subheading text-muted">Compete. Learn. Have fun!</h3> -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form name="sentMessage" id="registrationForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+                                    <p class="help-block text-danger"></p>
+
+                                    <input type="text" class="form-control" placeholder="School/Location *" id="school" required data-validation-required-message="Please enter your school/location.">
+                                    <p class="help-block text-danger"></p>
+
+                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+
+                                    <input type="tel" class="form-control" placeholder="Your Phone Number" id="phone">
+                                    <p class="help-block text-danger"></p>
+
+                                    <input type="text" class="form-control" placeholder="Team Name (if applicable)" id="teamname">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="TShirt Size" required
+                                        data-validation-required-message="Please give your TShirt size (one of XS, S, M, L, XL, XXL)" id="tshirt">
+                                    <p class="help-block text-danger"></p>
+
+                                    <textarea class="form-control" placeholder="Are there any accomodations you'd like to ask for (dietary restrictions/etc)?" id="requests"
+                                        style="height:120px;"></textarea>
+                                    <p class="help-block text-danger"></p>
+
+                                    <textarea class="form-control" placeholder="About You (Potential information for sponsors)" id="message"
+                                      style="height:160px;"></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col">
+                                <input type="checkbox" id="needs-transport"> 
+
+                                <span style="color: #bcbcbc;">
+                                    Check this box if you need transportation to and from the event
+                                </span>
+                            </div>
+
+                            <div class="col">
+                                <input type="checkbox"
+                                       id="code-of-conduct"
+                                       required
+                                       data-validation-required-message="You must agree to the MLH code of conduct before registering.">
+
+                                <span style="color: #bcbcbc;">
+                                    I will at all times abide by and conform to the
+                                    <a href="https://mlh.io/code-of-conduct">Major League Hacking Code of Conduct</a>
+                                    while at the event.
+                                </span>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12">
+                                <span style="color: #bcbcbc;">
+                                    <h5>
+                                        We are sanctioned by and participate in,
+                                        <a href="https://mlh.io">Major League Hacking</a> (MLH). By registering, You
+                                        authorize us to share certain application/registration information for event
+                                        administration, ranking, MLH administration, and occasional messages about
+                                        hackathons in line with the MLH <a href="https://mlh.io/privacy">Privacy Policy</a>.
+                                    </h5>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <button type="submit" class="btn btn-xl">Register</button>
+                            <div id="registration-status"></div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
