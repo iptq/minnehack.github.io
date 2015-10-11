@@ -15,7 +15,6 @@ $(function() {
             var phone =      $("#registrationForm").find("#phone").val();
             var teamname =   $("#registrationForm").find("#teamname").val();
             var message =    $("#registrationForm").find("#message").val();
-            var transport =  $("#registrationForm").find("#needs-transport")[0].checked;
             var requests =   $("#registrationForm").find("#requests").val();
             var tshirt =     $("#registrationForm").find("#tshirt").val();
 
@@ -25,7 +24,7 @@ $(function() {
                           phone: phone,
                           teamname: teamname,
                           message: message,
-                          transport: transport,
+                          transport: false,
                           requests: requests,
                           tshirt: tshirt}
 
