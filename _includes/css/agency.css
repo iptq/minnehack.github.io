@@ -359,6 +359,16 @@ section h3.section-subheading {
     -o-background-size: cover;
 }
 
+#bring {
+    background-image: url(../img/guys-bg-8.jpg);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
 .service-heading {
     margin: 15px 0;
     text-transform: none;
@@ -667,6 +677,21 @@ aside.clients img {
     margin: 50px auto;
 }
 
+.countdown-timer {
+    display:block;
+    float:none;
+    padding: 4%;
+    width:auto;
+    height:auto;
+    border-radius:20%;
+    -moz-border-radius:20%;
+    -webkit-border-radius:20%;
+    -khtml-border-radius: 20%;
+    background:#fff;
+    text-align:center;
+    position: relative;
+}
+
 section#register {
     background-color: #222;
     background-image: url(../img/patterns/footer_lodyas.png);
@@ -674,7 +699,26 @@ section#register {
     /*background-repeat: no-repeat;*/
 }
 
+section#prizes {
+    background-color: #222;
+    background-image: url(../img/patterns/footer_lodyas.png);
+    background-position: center;
+    /*background-repeat: no-repeat;*/
+}
+
+section#prizes .section-heading {
+    color: #fff;
+}
+
+section#prizes .section-subheading {
+    color: #fff;
+}
+
 section#register .section-heading {
+    color: #fff;
+}
+
+section#register .section-subheading {
     color: #fff;
 }
 
@@ -698,6 +742,34 @@ section#register .form-group textarea.form-control {
 section#register .form-control:focus {
     border-color: #{{ site.color.primary }};
     box-shadow: none;
+}
+
+section#prizes::-webkit-input-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+section#prizes:-moz-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+section#prizes::-moz-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
+}
+
+section#prizes:-ms-input-placeholder {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    color: #bbb;
 }
 
 section#register::-webkit-input-placeholder {
