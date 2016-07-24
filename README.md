@@ -1,12 +1,12 @@
 # Minnehack.io
 
-## Overview?
+## Overview
 
 This is a [Jekyll](https://jekyllrb.com/) site hosted on [GitHub Pages](https://pages.github.com/) which is a fork of the [Bootstrap](http://getbootstrap.com/) based [Agency theme](https://github.com/y7kim/agency-jekyll-theme).
 
 Jekyll is a static website generator. It takes a conveniently organized code base and compiles it into a static website that is easy to host. GitHub Pages is a website hosting service provided by GitHub.  
 
-GitHub Pages supports Jekyll natively, so all you need to do for the site to go live is push a commit to the `gh-pages` branch of the repo.  GitHub automatically builds it and serves it for you.
+GitHub Pages supports Jekyll natively, so all you need to do for the site to go live is push a commit to the `gh-pages` branch of the repo.  GitHub automatically builds it and serves it for you.  ***One catch here is that GitHub may not build the site immediately.  You may need to wait some time before the changes you pushed go live***.
 
 Thanks to Rick Kim for providing the original theme.
 
