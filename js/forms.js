@@ -83,7 +83,9 @@ $(function() {
             var email = $("#contactForm").find("#contact-email").val();
             var subject = $("#contactForm").find("#contact-subject").val();
             if(subject.length === 0) {
-                subject = "Minnehack (" + email + ")";
+                subject = "[MinneHack] " + email;
+            } else {
+                subject = "[MinneHack] " + subject;
             }
             var message = $("#contactForm").find("#contact-text").val();
 
