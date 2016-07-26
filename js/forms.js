@@ -80,30 +80,37 @@ $(function() {
         submitSuccess: function($form, event) {
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
-            var name =     $("#contactForm").find("#name").val();
-            var email =    $("#contactForm").find("#email").val();
-            var message =  $("#contactForm").find("#message").val();
-
-            var firstName = name; // For Success/Failure Message
-            // Check for white space in name for Success/Fail message
-            if (firstName.indexOf(' ') >= 0) {
-                firstName = name.split(' ').slice(0, -1).join(' ');
+            var email = $("#contactForm").find("#contact-email").val();
+            var subject = $("#contactForm").find("#contact-subject").val();
+            if(subject.length === 0) {
+                subject = "Minnehack (" + email + ")";
             }
+            var message = $("#contactForm").find("#contact-text").val();
 
             console.log("Sending email...");
 
             $.ajax({
-                url: "/mail/contact_me.php",
+                url: "https://formspree.io/acm@umn.edu",
                 type: "POST",
-                crossDomain: false,
+                crossDomain: true,
+                dataType: "json",
                 data: {
-                    name: name,
-                    email: email,
-                    message: message
+                    'body': message,
+                    '_replyTo': email,
+                    '_subject': subject,
                 },
                 cache: false,
                 success: function() {
-                    // Success message
+                    $('#contact-status').html(`
+                        <div class="alert alert-success">
+                          <strong>Thanks, your message has been sent!</strong>
+                          <button type="button" class="close" data-dismiss="alert"
+                                  aria-hidden="true">
+                            &times;
+                          </button>
+                        </div>
+                        `);
+                    /*
                     $('#contact-status').html("<div class='alert alert-success'>");
                     $('#contact-status > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
@@ -114,14 +121,29 @@ $(function() {
 
                     //clear all fields
                     $('#contactForm').trigger("reset");
+                    */
                 },
                 error: function() {
                     // Fail message
+                    $('#contact-status').html(`
+                        <div class="alert alert-danger">
+                          <strong>
+                            Sorry, your message failed to send.
+                            Please try again later.
+                          </strong>
+                          <button type="button" class="close" data-dismiss="alert"
+                                  aria-hidden="true">
+                            &times;
+                          </button>
+                        </div>
+                        `);
+                    /*
                     $('#contact-status').html("<div class='alert alert-danger'>");
                     $('#contact-status > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
                     $('#contact-status > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that our mail server is not responding. Please try again later!");
                     $('#contact-status > .alert-danger').append('</div>');
+                    */
                 },
             })
         },
