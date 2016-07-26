@@ -8,7 +8,7 @@
     </div>
     <div class="row">
       <div class="col-lg-12">
-        <form name="sentMessage" id="contactForm">
+        <form name="sentMessage" id="contactForm" class="text-center">
           <!--
               Using asterisks here for indicating required fields is
               _not_ ideal; neither are the <b> tags surrounding them.
@@ -18,17 +18,17 @@
           <div class="form-group">
             <label for="contact-email">Your Email Address<b>*</b></label>
             <input required type="text" name="email" id="contact-email"
-                   placeholder="Email Address">
+                   class="form-control" placeholder="Email Address">
           </div>
           <div class="form-group">
             <label for="contact-subject">Subject</label>
             <input type="text" name="subject" id="contact-subject"
-                   placeholder="Subject">
+                   class="form-control" placeholder="Subject">
            </div>
           <div class="form-group">
             <label for="contact-text">Your Message<strong>*</strong></label>
             <textarea required name="message" id="contact-text"
-                      placeholder="Your Message">
+                      class="form-control" placeholder="Your Message">
             </textarea>
           </div>
           <aside><small>[*] indicates a required field</small></aside>
