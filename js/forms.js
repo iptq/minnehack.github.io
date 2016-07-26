@@ -93,9 +93,9 @@ $(function() {
             console.log("Sending email...");
 
             $.ajax({
-                url: "http://spyboat.me:8142/",
+                url: "/mail/contact_me.php",
                 type: "POST",
-                crossDomain: true,
+                crossDomain: false,
                 data: {
                     name: name,
                     email: email,
