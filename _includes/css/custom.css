@@ -60,13 +60,15 @@ textarea {
 }
 
 .progress-anim {
-    width: 25px;
-    height: 25px;
+    width: 50px;
+    height: 50px;
     border: 10px solid #e8e8e8;
-    border-top: 10px solid #222;
-    border-left: 10px solid #222;
+    border-top: 10px solid #fed136;
+    border-left: 10px solid #fed136;
     border-radius: 50%;
     animation: spin 1.5s linear infinite;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @keyframes spin {
