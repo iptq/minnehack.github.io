@@ -1,5 +1,9 @@
 /* CUSTOM CSS */
 
+article: {
+    max-width: 768px;
+}
+
 .sponsors {
     text-align: center;
     margin-top: 20px;
