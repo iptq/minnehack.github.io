@@ -91,6 +91,8 @@ $(function() {
 
             console.log("Sending email...");
 
+            $('#contact-status').html('<div class="progress-anim"></div>');
+
             $.ajax({
                 url: "https://formspree.io/acm@umn.edu",
                 method: "POST",
