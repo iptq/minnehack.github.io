@@ -112,18 +112,8 @@ $(function() {
                           </button>
                         </div>
                         `);
-                    /*
-                    $('#contact-status').html("<div class='alert alert-success'>");
-                    $('#contact-status > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#contact-status > .alert-success')
-                        .append("<strong>Your message has been sent. </strong>");
-                    $('#contact-status > .alert-success')
-                        .append('</div>');
-
-                    //clear all fields
+                    // clear form fields
                     $('#contactForm').trigger("reset");
-                    */
                 },
                 error: function(xhr, error, exception) {
                     // Fail message
@@ -139,13 +129,6 @@ $(function() {
                           </button>
                         </div>
                         `);
-                    /*
-                    $('#contact-status').html("<div class='alert alert-danger'>");
-                    $('#contact-status > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#contact-status > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that our mail server is not responding. Please try again later!");
-                    $('#contact-status > .alert-danger').append('</div>');
-                    */
                 },
             })
         },
