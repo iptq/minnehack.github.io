@@ -92,7 +92,7 @@ $(function() {
             console.log("Sending email...");
 
             $.ajax({
-                url: "https://formspree.io/williamyaoh@gmail.com",
+                url: "https://formspree.io/acm@umn.edu",
                 type: "POST",
                 dataType: "json",
                 data: {
@@ -126,9 +126,6 @@ $(function() {
                 },
                 error: function(xhr, error, exception) {
                     // Fail message
-                    console.log(error);
-                    console.log(exception);
-                    console.log(xhr);
                     $('#contact-status').html(`
                         <div class="alert alert-danger">
                           <strong>
