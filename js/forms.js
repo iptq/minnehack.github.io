@@ -75,6 +75,84 @@ $(function() {
         },
     });
 
+    $("#contactForm").find("input,textarea").jqBootstrapValidation({
+        preventSubmit: true,
+        submitSuccess: function($form, event) {
+            event.preventDefault(); // prevent default submit behaviour
+            // get values from FORM
+            var email = $("#contactForm").find("#contact-email").val();
+            var subject = $("#contactForm").find("#contact-subject").val();
+            if(subject.length === 0) {
+                subject = "[MinneHack] " + email;
+            } else {
+                subject = "[MinneHack] " + subject;
+            }
+            var message = $("#contactForm").find("#contact-text").val();
+
+            console.log("Sending email...");
+
+            $.ajax({
+                url: "https://formspree.io/acm@umn.edu",
+                method: "POST",
+                crossDomain: true,
+                dataType: "json",
+                data: {
+                    'body': message,
+                    '_replyto': email,
+                    '_subject': subject,
+                },
+                cache: false,
+                success: function() {
+                    $('#contact-status').html(`
+                        <div class="alert alert-success">
+                          <strong>Thanks, your message has been sent!</strong>
+                          <button type="button" class="close" data-dismiss="alert"
+                                  aria-hidden="true">
+                            &times;
+                          </button>
+                        </div>
+                        `);
+                    /*
+                    $('#contact-status').html("<div class='alert alert-success'>");
+                    $('#contact-status > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                        .append("</button>");
+                    $('#contact-status > .alert-success')
+                        .append("<strong>Your message has been sent. </strong>");
+                    $('#contact-status > .alert-success')
+                        .append('</div>');
+
+                    //clear all fields
+                    $('#contactForm').trigger("reset");
+                    */
+                },
+                error: function(xhr, error, exception) {
+                    // Fail message
+                    $('#contact-status').html(`
+                        <div class="alert alert-danger">
+                          <strong>
+                            Sorry, your message failed to send.
+                            Please try again later.
+                          </strong>
+                          <button type="button" class="close" data-dismiss="alert"
+                                  aria-hidden="true">
+                            &times;
+                          </button>
+                        </div>
+                        `);
+                    /*
+                    $('#contact-status').html("<div class='alert alert-danger'>");
+                    $('#contact-status > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                        .append("</button>");
+                    $('#contact-status > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that our mail server is not responding. Please try again later!");
+                    $('#contact-status > .alert-danger').append('</div>');
+                    */
+                },
+            })
+        },
+        filter: function() {
+            return $(this).is(":visible");
+        },
+    });
 
     $("a[data-toggle=\"tab\"]").click(function(e) {
         e.preventDefault();
