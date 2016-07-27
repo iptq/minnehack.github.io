@@ -92,7 +92,7 @@ $(function() {
             console.log("Sending email...");
 
             $.ajax({
-                url: "https://formspree.io/acm@umn.edu",
+                url: "https://formspree.io/williamyaoh@gmail.com",
                 type: "POST",
                 crossDomain: true,
                 dataType: "json",
