@@ -97,7 +97,7 @@ $(function() {
                 dataType: "json",
                 data: {
                     'body': message,
-                    '_replyTo': email,
+                    '_replyto': email,
                     '_subject': subject,
                 },
                 cache: false,
