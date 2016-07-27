@@ -94,7 +94,6 @@ $(function() {
             $.ajax({
                 url: "https://formspree.io/williamyaoh@gmail.com",
                 type: "POST",
-                crossDomain: true,
                 dataType: "json",
                 data: {
                     'body': message,
