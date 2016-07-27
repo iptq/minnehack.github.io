@@ -93,7 +93,8 @@ $(function() {
 
             $.ajax({
                 url: "https://formspree.io/acm@umn.edu",
-                type: "POST",
+                method: "POST",
+                crossDomain: true,
                 dataType: "json",
                 data: {
                     'body': message,
