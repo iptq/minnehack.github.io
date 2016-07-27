@@ -54,3 +54,7 @@ article section {
 .panel-heading {
     color: black !important;
 }
+
+textarea {
+    min-height: 4em;
+}
