@@ -58,3 +58,18 @@ article section {
 textarea {
     min-height: 150px;
 }
+
+.progress-anim {
+    width: 25px;
+    height: 25px;
+    border: 10px solid #e8e8e8;
+    border-top: 10px solid #222;
+    border-left: 10px solid #222;
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
