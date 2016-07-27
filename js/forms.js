@@ -125,8 +125,11 @@ $(function() {
                     $('#contactForm').trigger("reset");
                     */
                 },
-                error: function() {
+                error: function(xhr, error, exception) {
                     // Fail message
+                    console.log(error);
+                    console.log(exception);
+                    console.log(xhr);
                     $('#contact-status').html(`
                         <div class="alert alert-danger">
                           <strong>
