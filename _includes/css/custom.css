@@ -5,6 +5,10 @@ article {
     margin-top: 30px;
 }
 
+article section {
+    padding: 0px;
+}
+
 .sponsors {
     text-align: center;
     margin-top: 20px;
