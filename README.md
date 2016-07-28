@@ -134,7 +134,7 @@ new class or id instead, and style it from the stylesheets. Similarly,
 + \<style\>
 + \<u\>
 
-`\<strong\>` and `\<em\>` can be okay, but **only if the enclosed text is
+`<strong>` and `<em>` can be okay, but **only if the enclosed text is
 actually important** compared to the surrounding text. Do not use them
 solely for their style changes.
 
