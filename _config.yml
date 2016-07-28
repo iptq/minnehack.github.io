@@ -1,5 +1,6 @@
 url: http://minnehack.github.io
 baseurl: /
+mainpage: /index.html
 
 # Site settings
 title: MinneHack
