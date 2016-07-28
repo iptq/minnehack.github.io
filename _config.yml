@@ -2,10 +2,10 @@ url: http://minnehack.github.io
 baseurl: /
 
 # Site settings
-title: MinneHack 2017
+title: MinneHack
 email: acm@cs.umn.edu
 description: >
-  ACM presents MinneHack 2017, a 24-hour Hackathon
+  ACM presents MinneHack, a 24-hour Hackathon
   competition hosted at the University of Minnesota, Twin Cities.
   Students from all around the Midwest design, implement, and
   present innovative application ideas to industry judges and
