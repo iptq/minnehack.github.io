@@ -41,3 +41,9 @@ permalink: pretty
 sass:
   style: compressed
   sass_dir: _sass
+
+# Stuff that shouldn't go into the published website.
+exclude:
+  - LICENSE
+  - CNAME
+  - README.md
