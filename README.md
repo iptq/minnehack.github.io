@@ -101,8 +101,9 @@ tab name, etc). The triple dashes delimit the Front Matter, and what's inside
 is specified using [YAML](http://yaml.org/).
 
 Finally, put whatever content you want on the page below the Front
-Matter. Once Jekyll builds and serves the site, you can navigate to
-`minnehack.io/<page-name>` and see your shiny new page!
+Matter. Then you can browse to it on your local server; or, if you've pushed
+to the `master` branch, you'll actually be able to see it on the real
+MinneHack website. Yay!
 
 #### I want to change how the website looks
 
