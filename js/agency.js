@@ -1,17 +1,34 @@
 /*!
- * Start Bootstrap - Agnecy Bootstrap Theme (http://startbootstrap.com)
+ * Start Bootstrap - Agency Bootstrap Theme (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ *
+ * Modified by Association of Computing Machinery, University of Minnesota,
+ * Twin Cities.
  */
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
-    $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1250, 'easeOutQuint');
-        event.preventDefault();
+    $("a.page-scroll").bind('click', function(event) {
+        // .page-scroll must be used with anchor links.
+        // The link's href should contain both the anchor tag
+        // and _the page the anchor tag is on_.
+        var href = $(this).attr("href");
+        var anchor = href.substring(href.lastIndexOf('#'));
+        var query = $(anchor);
+
+        if(query.length > 0) {
+            // Target is on this page, take over the event and
+            // scroll smoothly to the target.
+            event.preventDefault();
+            $("html, body").stop().animate(
+                {
+                    scrollTop: query.offset().top,
+                },
+                1250,
+                'easeOutQuint'
+            );
+        } // Otherwise, let the page jump normally to the target.
     });
 });
 
