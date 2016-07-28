@@ -1,58 +1,25 @@
-url: https://minnehack.github.io
-baseurl: 
+url: http://minnehack.github.io
+baseurl: /
 
 # Site settings
-title: MinneHack
+title: MinneHack 2017
 email: acm@cs.umn.edu
-description: "ACM presents MinneHack 2015, a 24 Hour Hackathon competition hosted at the University of Minnesota"
+description: >
+  ACM presents MinneHack 2017, a 24-hour Hackathon
+  competition hosted at the University of Minnesota, Twin Cities.
+  Students from all around the Midwest design, implement, and
+  present innovative application ideas to industry judges and
+  professionals.
 
-# Color settings (hex-codes without the leading hash-tag)
-# color:
-#   primary: fed136
-#   secondary: fec503  
-#   secondary-dark: 333
-
+# Color settings for the website.
+# In my opinion, this is not something that belongs in a config
+# file. Should probably be moved to a stylesheet.
 color:
   primary: fed136
   secondary: fec503
   secondary-dark: 333
 
-# Team names, titles and social links
-people:
-- name: Flying Walrus
-  pic: carleton
-  position: Carleton College
-  social:
-    - title: twitter
-      url: #
-    - title: facebook
-      url: #
-    - title: stack-overflow
-      url: #
-
-- name: Hack To the Future
-  pic: umn
-  position: University of Minnesota
-  social:
-    - title: twitter
-      url: #
-    - title: facebook
-      url: #
-    - title: linkedin
-      url: #
-
-- name: Beta Eagles
-  pic: augsburg 
-  position: Augsburg College
-  social:
-    - title: twitter
-      url: #
-    - title: facebook
-      url: #
-    - title: google-plus
-      url: #
-
-# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+# Social networks usernames.
 social:
   - title: twitter
     url: https://twitter.com/acmuofmn
@@ -61,9 +28,14 @@ social:
 
 # Postal address (add as many lines as necessary)
 address:
+  - line: Association for Computing Machinery, University of Minnesota, Twin Cities
+  - line: Keller Hall
+  - line: Room 2-204
   - line: 200 Union Street SE
   - line: Minneapolis, MN 55455
 
 # Build settings
 markdown: kramdown
 permalink: pretty
+sass:
+  style: compressed
