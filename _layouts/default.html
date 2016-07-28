@@ -12,13 +12,10 @@
   <body id="page-top" class="index">
 
     {% include navbar.html %}
-    {% include header.html %}
-    {% include about.html %}
-    {% include schedule.html %}
-    {% include faq.html %}
-    {% include sponsors.html %}
-    {% include register.html %}
-    {% include contact.html %}
+
+    <!-- Inserts whatever is inside the page that used us as a layout. -->
+    {{ content }}
+    
     {% include footer.html %}
     {% include js.html %}
 
