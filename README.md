@@ -66,7 +66,7 @@ in here, place it into `_site`, and use that directory as the root of
 the hosted website. For example, the `img` directory will be placed as
 is into `_site`, and become publicly accessible. (Try navigating to an
 image from the actual MinneHack
-website. [Example](http://minnehack.io/img/mhlogo.png))
+website. [Example](http://minnehack.io/img/logos/mhlogo.png))
 
 #### I want to edit a page's content
 
