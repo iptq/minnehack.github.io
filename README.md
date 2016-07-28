@@ -54,7 +54,7 @@ simply build the website into `<minnehack-repo>/_site`, without starting
 a web server. This can be helpful if you just want to inspect the actual
 output that Jekyll is producing.
 
-#### Updating
+### Updating
 
 The result of Jekyll's build process (and the set of code and assets
 that make up the actual website) is the `_site` directory. That means
@@ -68,7 +68,7 @@ is into `_site`, and become publicly accessible. (Try navigating to an
 image from the actual MinneHack
 website. [Example](http://minnehack.io/img/logos/mhlogo.png))
 
-#### I want to edit a page's content
+### I want to edit a page's content
 
 All of the visible pages are specified on the root directory of this repo.
 For the main page, look at `index.html`. The other pages are named according
@@ -81,7 +81,7 @@ on the top-level pages if you want to change which sections show up. (Make sure
 that the corresponding included file exists in `_include` before you
 add new include directives!)
 
-#### I want to add a new page to the website
+### I want to add a new page to the website
 
 To create `minnehack.io/<page-name>`, create a new file called `page-name.html`
 at the root directory. Next, add these lines to the top of the file:
@@ -105,7 +105,7 @@ Matter. Then you can browse to it on your local server; or, if you've pushed
 to the `master` branch, you'll actually be able to see it on the real
 MinneHack website. Yay!
 
-#### I want to change how the website looks
+### I want to change how the website looks
 
 For layout changes, look inside `_layout/default.html`, which
 specifies the default wrapping content on each page. Right now it
@@ -142,14 +142,14 @@ solely for their style changes.
 Basically, put structural stuff in HTML, put stylistic stuff in Sass.
 Don't mix them together.
 
-#### I want to change how the website behaves
+### I want to change how the website behaves
 
 Look inside the `js/` directory and see if the behavior you want to modify
 has a corresponding script. If you're trying to add behavior to something
 that's not hooked up yet, put a script there and include that script in
 `_includes/js.html`.
 
-#### I want to add an image
+### I want to add an image
 
 Just stick it somewhere inside `img/`, then use templating to link to it.
 For example, let's say we had a Sass stylesheet set up like this:
@@ -187,7 +187,7 @@ Similarly, you could include it on an HTML page like so:
 <img src="{{ 'img/bg/super-important-background.png' | prepend: site.baseurl }}"/>
 ```
 
-#### I want to do something not on here
+### I want to do something not on here
 
 If you're not the ACM UMN Webmaster, ask him/her to help you out.
 
