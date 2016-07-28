@@ -124,17 +124,17 @@ website stylistically cohesive if we want to make sweeping changes. Add a
 new class or id instead, and style it from the stylesheets. Similarly,
 **do not use any of the following HTML tags:**
 
-+ <b>
-+ <i>
-+ <br>
-+ <hr>
-+ <font>
-+ <small>
-+ <strike>
-+ <style>
-+ <u>
++ \<b\>
++ \<i\>
++ \<br\>
++ \<hr\>
++ \<font\>
++ \<small\>
++ \<strike\>
++ \<style\>
++ \<u\>
 
-`<strong>` and `<em>` can be okay, but **only if the enclosed text is
+`\<strong\>` and `\<em\>` can be okay, but **only if the enclosed text is
 actually important** compared to the surrounding text. Do not use them
 solely for their style changes.
 
