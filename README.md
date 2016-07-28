@@ -120,6 +120,13 @@ modifying the Bootstrap and Agency stylesheets directly. We're using
 [Sass](http://sass-lang.com/) instead of straight CSS to make things
 easier to read and maintain.
 
+If you create a new stylesheet in `_sass/`, make sure to import it from
+`css/minnehack.sass`. `minnehack.sass` is the actual stylesheet that
+eventually gets added to all the pages. However, try to keep
+styling out of it, and use it for sweeping configuration instead. Think
+about where your styles belong, and put them in a suitably-named
+stylesheet in `_sass/`.
+
 **Do not add inline style.** It's ugly and makes it hard to keep the whole
 website stylistically cohesive if we want to make sweeping changes. Add a
 new class or id instead, and style it from the stylesheets. Similarly,
