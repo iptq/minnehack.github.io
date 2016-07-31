@@ -5,8 +5,25 @@
 
 ::-moz-selection
   background-color: $primary-color
-  color: $light-color
+  color: $primary-light-color
 
 ::-selection
   background-color: $primary-color
-  color: $light-color
+  color: $primary-light-color
+
+.form-control:focus
+  border-color: $primary-color
+  box-shadow: none
+
+// Extra class here is for increased specificity
+   (to override Bootstrap)
+input, input.form-control
+  height: auto
+  color: $secondary-dark-color
+
+textarea, textarea.form-control
+  color: $secondary-dark-color
+  height: 236px
+
+select, select.form-control
+  color: $secondary-dark-color
