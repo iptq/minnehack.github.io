@@ -27,7 +27,9 @@ $(function() {
                 },
                 1250,
                 'easeOutQuint'
-            );
+            ).promise().then(function() {
+                history.pushState({}, "", anchor);
+            });
         } // Otherwise, let the page jump normally to the target.
     });
 });
