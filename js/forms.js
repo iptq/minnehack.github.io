@@ -1,80 +1,4 @@
 $(function() {
-    // Do bootstrap validation for the registration field
-    $("#registrationForm").find("input,textarea").jqBootstrapValidation({
-        preventSubmit: true,
-        submitError: function($form, event, errors) {
-            // additional error messages or events
-        },
-        submitSuccess: function($form, event) {
-            event.preventDefault(); // prevent default submit behaviour
-            // get values from FORM
-            
-            var name =       $("#registrationForm").find("#name").val();
-            var school =     $("#registrationForm").find("#school").val();
-            var email =      $("#registrationForm").find("#email").val();
-            var phone =      $("#registrationForm").find("#phone").val();
-            var teamname =   $("#registrationForm").find("#teamname").val();
-            var message =    $("#registrationForm").find("#message").val();
-            var requests =   $("#registrationForm").find("#requests").val();
-            var tshirt =     $("#registrationForm").find("#tshirt").val();
-
-            var input = { name: name,
-                          school: school,
-                          email: email,
-                          phone: phone,
-                          teamname: teamname,
-                          message: message,
-                          transport: false,
-                          requests: requests,
-                          tshirt: tshirt}
-
-//            for (field in input) {
-//              // Filter out empty, non-required fields
-//              if (input.hasOwnProperty(field) &&
-//                  !input[field]) {
-//                delete input[field];
-//              }
-//            }
-
-            console.log("Registering...");
-            console.log(input);
-
-            var firebase_callback =
-              function(arg) {
-                if (arg == null) {
-                  // Show positive result
-                  $("#registration-status").html("<div class='alert alert-success'>");
-                  $('#registration-status > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                    .append("</button>");
-                  $('#registration-status > .alert-success')
-                    .append("<strong>Registration successful! </strong>");
-                  $('#registration-status > .alert-success')
-                    .append('</div>');
-
-                  console.log("Clearing it?");
-
-                  // Clear all fields
-                  $('#registrationForm').trigger("reset");
-                } else {
-                  // Fail message
-                  $('#registration-status').html("<div class='alert alert-danger'>");
-                  $('#registration-status > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                    .append("</button>");
-                  $('#registration-status > .alert-danger').append("<strong>Registration failed. Try again in a minute, contact us if error persists.");
-                  $('#registration-status > .alert-danger').append('</div>');
-                }
-              }
-
-            var registrationDB = new Firebase("https://minnehack-register.firebaseio.com");
-
-
-            registrationDB.push(input, firebase_callback);
-        },
-        filter: function() {
-            return $(this).is(":visible");
-        },
-    });
-
     $("#contactForm").find("input,textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitSuccess: function($form, event) {
@@ -145,6 +69,138 @@ $(function() {
     });
 });
 
+$(function() {
+    function _arrayBufferToBase64( buffer ) {
+        var binary = '';
+        var bytes = new Uint8Array( buffer );
+        var len = bytes.byteLength;
+        for (var i = 0; i < len; i++) {
+            binary += String.fromCharCode( bytes[ i ] );
+        }
+        return window.btoa( binary );
+    }
+    
+    // Submit and validate registration form.
+    $("#registration-form").find("input,textarea")
+                           .not("[type=submit]")
+                           .jqBootstrapValidation({
+        submitSuccess: function($form, event) {
+            event.preventDefault();
+
+            console.log("Attempting to register for MinneHack.");
+
+            $("#registration-status").html(`
+              <div class="progress-anim"></div>
+            `);
+
+            var name = $("#registration-name").val();
+            var pname = $("#registration-pname").val();
+            var email = $("#registration-email").val();
+            var resumeFiles = $("#registration-resume").prop("files");
+            var school = $("#registration-school").val();
+            if(school === "Other") {
+                school = $("#registration-school-other").val();
+            }
+
+            var data = {
+                'name': name,
+                'pname': pname,
+                'email': email,
+                'school': school
+            };
+
+            function submit(data) {
+                console.log("Registering...");
+                
+                $.ajax({
+                    // This URL is to a Google Script-deployed application
+                    // owned by the ACM UMN Google account.
+                    url: "https://script.google.com/macros/s/AKfycbxZcAtkxTtsrb6zEzajUTydK2szeexlS35cLemj4bSPNx0JPTM/exec",
+                    method: "POST",
+                    data: data,
+                    dataType: "json",
+                    success: function() {
+                        $('#registration-status').html(`
+                          <div class="alert alert-success">
+                            <strong>
+                              You're registered for MinneHack!
+                              We'll send you a reminder when the event gets closer.
+                            </strong>
+                            <button type="button" class="close" data-dismiss="alert"
+                                    aria-hidden="true">
+                              &times;
+                            </button>
+                          </div>
+                        `);
+                    // clear form fields
+                    $('#registration-form').trigger("reset");
+                    },
+                    error: function() {
+                       $('#registration-status').html(`
+                         <div class="alert alert-danger">
+                           <strong>
+                             Sorry, your registration failed.
+                             Please try again later.
+                           </strong>
+                           <button type="button" class="close" data-dismiss="alert"
+                                   aria-hidden="true">
+                             &times;
+                           </button>
+                         </div>
+                       `);
+                    }
+                });
+            }
+
+            if(resumeFiles.length > 0) {
+                console.log("Trying to submit with resume...");
+                var file = resumeFiles[0];
+                var dot = file.name.lastIndexOf('.');
+                var extension = "";
+                if(dot !== -1) {
+                    extension = file.name.substring(dot);
+                }
+
+                data["resume-extension"] = extension;
+
+                console.log(data);
+                
+                var filereader = new FileReader();
+                filereader.onload = function() {
+                    console.log("Finished reading file.");
+                    data.resume = _arrayBufferToBase64(filereader.result);
+                    submit(data);
+                }
+
+                filereader.readAsArrayBuffer(file);
+            } else {
+                submit(data);
+            }
+        },
+        
+        filter: function() {
+            return $(this).is(":visible");
+        },
+    });
+});
+
+$(function() {
+    // Hide/show the School (Other) field based on School selection.
+    var school = $("#registration-school");
+    var schoolOther = $("#registration-school-other");
+
+    schoolOther.parent().hide();
+
+    school.change(function(event) {
+        if(school.val() === "Other") {
+            schoolOther.parent().show();
+            schoolOther.prop("required", true);
+        } else {
+            schoolOther.parent().hide();
+            schoolOther.prop("required", false);
+        }
+    });
+});
 
 /*When clicking on Full hide fail/success boxes */
 $('#registrationForm input#name').focus(function() {

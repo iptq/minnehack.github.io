@@ -1,10 +1,18 @@
 <section class="index-section container-fluid text-center" id="register">
   <h2 class="section-heading">Registration</h2>
-  <form id="reistration-form" class="container">
+  <form id="registration-form" class="container">
     <div class="form-group">
-      <label for="registration-name">Name on identification</label>
+      <span data-toggle="tooltip" data-placement="right"
+            title="The name on your student ID.
+                   You'll need to present a valid student ID when
+                   you come to MinneHack.">
+        <label for="registration-name">Name on identification</label>
+        <span class="fa fa-question-circle fa-lg"></span>
+      </span>
+
       <input type="text" id="registration-name" name="name"
-             class="form-control" placeholder="Joseph Smith">
+             class="form-control" placeholder="Joseph Smith"
+             required>
     </div>
     <div class="form-group">
       <label for="registration-pname">Preferred name</label>
@@ -14,10 +22,11 @@
     <div class="form-group">
       <label for="registration-email">Email address</label>
       <input type="email" id="registration-email" name="email"
-             class="form-control" placeholder="joe.smith@email.com">
+             class="form-control" placeholder="joe.smith@email.com"
+             required>
     </div>
     <div class="form-group">
-      <label for="registration-resume">Résumé</label>
+      <label for="registration-resume">Résumé (max size 2MB)</label>
       <input type="file" id="registration-resume" name="resume"
              class="form-control">
     </div>
@@ -33,12 +42,15 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="registration-school-other">School (Other)</label>
+      <label for="registration-school-other">School Name (Other)</label>
       <input type="text" id="registration-school-other" name="school-other"
              class="form-control">
     </div>
+    <div id="registration-status">
+      <!-- Will be filled with loading spinner/status messages. -->
+    </div>
     <button type="submit" class="btn btn-xl">
-      Register!
+      Sign me up!
     </button>
   </form>
 </section>
