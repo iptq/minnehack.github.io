@@ -81,7 +81,7 @@ $(function() {
     }
     
     // Submit and validate registration form.
-    $("#registration-form").find("input,textarea")
+    $("#registration-form").find("input,textarea,select")
                            .not("[type=submit]")
                            .jqBootstrapValidation({
         submitSuccess: function($form, event) {
@@ -183,6 +183,14 @@ $(function() {
         },
     });
 });
+
+function resumeValidation($input, value, callback) {
+    callback({
+        value: value,
+        valid: $input.prop("files")[0].size < 2 * 1024 * 1024,
+        message: "File must be less than 2MB.",
+    });
+}
 
 $(function() {
     // Hide/show the School (Other) field based on School selection.

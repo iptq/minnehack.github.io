@@ -19,16 +19,27 @@
       <input type="text" id="registration-pname" name="pname"
              class="form-control" placeholder="Joe">
     </div>
-    <div class="form-group">
+    <div class="form-group control-group">
       <label for="registration-email">Email address</label>
-      <input type="email" id="registration-email" name="email"
-             class="form-control" placeholder="joe.smith@email.com"
-             required>
+      <div class="controls">
+        <input type="email" id="registration-email" name="email"
+               class="form-control" placeholder="joe.smith@email.com"
+               required>
+        <p class="help-block">
+          <!-- Gets filled with help messages from validation. -->
+        </p>
+      </div>
     </div>
-    <div class="form-group">
+    <div class="form-group control-group">
       <label for="registration-resume">Résumé (max size 2MB)</label>
-      <input type="file" id="registration-resume" name="resume"
-             class="form-control">
+      <div class="controls">
+        <input type="file" id="registration-resume" name="resume"
+               data-validation-callback-callback="resumeValidation"
+               class="form-control">
+        <p class="help-block">
+          <!-- Gets filled with help messages from validation. -->
+        </p>
+      </div>
     </div>
     <div class="form-group">
       <label for="registration-school">School</label>
