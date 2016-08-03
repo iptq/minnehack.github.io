@@ -1,7 +1,7 @@
 <section class="index-section container-fluid text-center" id="register">
   <h2 class="section-heading">Registration</h2>
-  <form id="registration-form" class="container">
-    <div class="form-group">
+  <form id="registration-form">
+    <div class="form-group control-group">
       <span data-toggle="tooltip" data-placement="right"
             title="The name on your student ID.
                    You'll need to present a valid student ID when
@@ -10,14 +10,19 @@
         <span class="fa fa-question-circle fa-lg"></span>
       </span>
 
-      <input type="text" id="registration-name" name="name"
-             class="form-control" placeholder="Joseph Smith"
-             required>
+      <div class="controls">
+        <input type="text" id="registration-name" name="name"
+               class="form-control" placeholder="Joseph Smith"
+               required>
+      </div>
     </div>
-    <div class="form-group">
+    <div class="form-group control-group">
       <label for="registration-pname">Preferred name</label>
-      <input type="text" id="registration-pname" name="pname"
-             class="form-control" placeholder="Joe">
+      
+      <div class="controls">
+        <input type="text" id="registration-pname" name="pname"
+               class="form-control" placeholder="Joe">
+      </div>
     </div>
     <div class="form-group control-group">
       <label for="registration-email">Email address</label>
@@ -35,6 +40,7 @@
       <div class="controls">
         <input type="file" id="registration-resume" name="resume"
                data-validation-callback-callback="resumeValidation"
+               required
                class="form-control">
         <p class="help-block">
           <!-- Gets filled with help messages from validation. -->
@@ -43,6 +49,7 @@
     </div>
     <div class="form-group">
       <label for="registration-school">School</label>
+      
       <select class="form-control" id="registration-school" name="school">
         <option>University of Minnesota, Twin Cities</option>
         <option>University of Minnesota, Duluth</option>
@@ -52,10 +59,13 @@
         <option>Other</option>
       </select>
     </div>
-    <div class="form-group">
+    <div class="form-group control-group">
       <label for="registration-school-other">School Name (Other)</label>
-      <input type="text" id="registration-school-other" name="school-other"
-             class="form-control">
+      
+      <div class="controls">
+        <input type="text" id="registration-school-other" name="school-other"
+               class="form-control">
+      </div>
     </div>
     <div id="registration-status">
       <!-- Will be filled with loading spinner/status messages. -->

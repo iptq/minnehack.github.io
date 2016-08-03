@@ -188,7 +188,7 @@ function resumeValidation($input, value, callback) {
     callback({
         value: value,
         valid: $input.prop("files")[0].size < 2 * 1024 * 1024,
-        message: "File must be less than 2MB.",
+        message: "File must be less than 2MB",
     });
 }
 
@@ -197,14 +197,14 @@ $(function() {
     var school = $("#registration-school");
     var schoolOther = $("#registration-school-other");
 
-    schoolOther.parent().hide();
+    schoolOther.closest("div.form-group").hide();
 
     school.change(function(event) {
         if(school.val() === "Other") {
-            schoolOther.parent().show();
+            schoolOther.closest("div.form-group").show();
             schoolOther.prop("required", true);
         } else {
-            schoolOther.parent().hide();
+            schoolOther.closest("div.form-group").hide();
             schoolOther.prop("required", false);
         }
     });
