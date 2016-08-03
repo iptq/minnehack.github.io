@@ -188,7 +188,7 @@ function resumeValidation($input, value, callback) {
     callback({
         value: value,
         valid: $input.prop("files")[0].size <= 2 * 1024 * 1024,
-        message: "File must be less than 2MB",
+        message: "File size must be less than 2MB",
     });
 }
 
