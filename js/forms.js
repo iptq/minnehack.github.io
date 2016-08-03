@@ -115,7 +115,7 @@ $(function() {
                 $.ajax({
                     // This URL is to a Google Script-deployed application
                     // owned by the ACM UMN Google account.
-                    url: "https://script.google.com/macros/s/AKfycbxZcAtkxTtsrb6zEzajUTydK2szeexlS35cLemj4bSPNx0JPTM/exec",
+                    url: "https://script.google.com/macros/s/AKfycbxz3xAhjkGae_wOqJcD18EWP_DAkI0mPMIS4yccmJG4VaMRKSM/exec",
                     method: "POST",
                     data: data,
                     dataType: "json",
@@ -187,7 +187,7 @@ $(function() {
 function resumeValidation($input, value, callback) {
     callback({
         value: value,
-        valid: $input.prop("files")[0].size < 2 * 1024 * 1024,
+        valid: $input.prop("files")[0].size <= 2 * 1024 * 1024,
         message: "File must be less than 2MB",
     });
 }
