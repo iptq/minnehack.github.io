@@ -7,6 +7,11 @@
  * Twin Cities.
  */
 
+// Enable tooltips
+$(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
     $("a.page-scroll").bind('click', function(event) {
@@ -27,7 +32,9 @@ $(function() {
                 },
                 1250,
                 'easeOutQuint'
-            );
+            ).promise().then(function() {
+                history.pushState({}, "", anchor);
+            });
         } // Otherwise, let the page jump normally to the target.
     });
 });

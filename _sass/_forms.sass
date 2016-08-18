@@ -1,0 +1,56 @@
+// Styling for form elements
+
+@charset "utf-8"
+
+form
+  max-width: 768px
+  margin-left: auto
+  margin-right: auto
+
+.require
+  color: #ff3333
+  font-weight: bold
+  font-size: 18px
+  margin-right: 5px
+
+.form-control:focus
+  box-shadow: 0px 1px 6px #dbc59e
+
+.form-control
+  color: $secondary-dark-color
+
+input.form-control
+  height: auto
+
+textarea.form-control
+  height: 236px
+
+input, textarea, select
+  &.form-control
+    border-width: 3px
+
+.control-group.success
+  input, textarea, select
+    &.form-control
+      border-color: #66cc44
+      background-color: #f0fff0
+
+.control-group.warning
+  input, textarea, select
+    &.form-control
+      border-color: #cc3333
+      background-color: #fff0f0
+
+.help-block
+  text-align: left
+  color: #ee3333
+  font-weight: bold
+  font-size: 16px
+  
+  width: 100%
+
+  ul
+    list-style: none
+
+.alert-success
+  background-color: #66cc44
