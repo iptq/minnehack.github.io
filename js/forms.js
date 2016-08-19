@@ -206,6 +206,26 @@ $(function() {
         } else {
             schoolOther.closest("div.form-group").hide();
             schoolOther.prop("required", false);
+            schoolOther.val(null);
+        }
+    });
+});
+
+$(function() {
+    // Hide/show the Dietary needs (Other) field based on Diet selection
+    var diet = $("#registration-diet");
+    var dietOther = $("#registration-diet-other");
+
+    dietOther.closest("div.form-group").hide();
+
+    diet.change(function(event) {
+        if(diet.val() === "Other") {
+            dietOther.closest("div.form-group").show();
+            dietOther.prop("required", true);
+        } else {
+            dietOther.closest("div.form-group").hide();
+            dietOther.prop("required", false);
+            dietOther.val(null);
         }
     });
 });
