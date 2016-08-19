@@ -66,3 +66,24 @@ input, textarea, select
 
 .alert-success
   background-color: #66cc44
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+
+  100%
+    transform: rotate(360deg)
+
+.progress-anim
+  display: block
+  margin-left: auto
+  margin-right: auto
+
+  height: 50px
+  width: 50px
+  border-radius: 50%
+  border: 10px solid transparent
+  border-top: 10px solid $primary-color
+  border-bottom: 10px solid $primary-color
+
+  animation: spin 1s linear infinite
