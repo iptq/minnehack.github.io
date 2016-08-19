@@ -89,24 +89,46 @@ $(function() {
 
             console.log("Attempting to register for MinneHack.");
 
+            if(!$("#registration-mlh").prop("checked")) {
+                console.log("MLH Code of Conduct not agreed to.");
+                return;
+            }
+
             $("#registration-status").html(`
               <div class="progress-anim"></div>
             `);
 
-            var name = $("#registration-name").val();
-            var pname = $("#registration-pname").val();
+            var firstname = $("#registration-firstname").val();
+            var lastname = $("#registration-lastname").val();
+            var nickname = $("#registration-nickname").val();
             var email = $("#registration-email").val();
+            var phone = $("#registration-phone").val();
+            var gender = $("#registration-gender").val();
             var resumeFiles = $("#registration-resume").prop("files");
             var school = $("#registration-school").val();
             if(school === "Other") {
                 school = $("#registration-school-other").val();
             }
+            var diet = $("#registration-diet").val();
+            if(diet === "Other") {
+                diet = $("#registration-diet-other").val();
+            }
+            var tshirt = $("#registration-tshirt").val();
+            var special = $("#registration-special").val();
+            var eighteen = $("#registration-age").prop("checked");
 
             var data = {
-                'name': name,
-                'pname': pname,
+                'firstname': firstname,
+                'lastname': lastname,
+                'nickname': nickname,
                 'email': email,
-                'school': school
+                'phone': phone,
+                'gender': gender,
+                'school': school,
+                'diet': diet,
+                'tshirt': tshirt,
+                'special': special,
+                'eighteen': eighteen
             };
 
             function submit(data) {
