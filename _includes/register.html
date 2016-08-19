@@ -180,23 +180,50 @@
       <textarea class="form-control"
                 id="registration-special"></textarea>
     </div>
+
+    <div class="form-group">
+      <p>
+        We participate in Major League Hacking (MLH) as a MLH Member
+        Event. By registering for MinneHack, you authorize us to share
+        certain application/registration information for event
+        administration, ranking, MLH administration, pre and
+        post-event informational e-mails, and occasional messages
+        about hackathons in line with the MLH Privacy Policy. In
+        registering for MinneHack, you must agree to MLH's
+        <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">
+          Code of Conduct.
+        </a>
+      </p>
+
+      <div class="checkoff">
+        <input type="checkbox" id="registration-mlh" required/>
+        <label for="registration-mlh">
+          <span class="require"></span>
+          I agree to the MLH Code of Conduct, and authorize MinneHack to
+          share some of my information and send me e-mails.
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <p>
+        Hackers younger than 18 must bring a signed form from their parents
+        or legal guardians giving permission to attend MinneHack.
+      </p>
+
+      <div class="checkoff">
+        <input type="checkbox" id="registration-age"/>
+        <label for="registration-age">
+          I am 18 years or older
+        </label>
+    </div>
     
     <div id="registration-status">
       <!-- Will be filled with loading spinner/status messages. -->
     </div>
     
     <span style="color: #bcbcbc">
-      We participate in Major League Hacking (MLH) as a
-      MLH Member Event. You authorize us to share certain
-      application/registration information for event
-      administration, ranking, MLH administration, pre and
-      post-event informational e-mails, and occasional
-      messages about hackathons in line with the MLH
-      Privacy Policy. In registering for MinneHack, you
-      must agree to MLH's
-      <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">
-        Code of Conduct.
-      </a>
+
     </span>
     <button type="submit" class="btn btn-xl">
       Sign me up!
