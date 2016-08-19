@@ -94,12 +94,10 @@
     </div>
     
     <div class="form-group control-group">
-      <span class="require"></span>
       <label for="registration-resume">Résumé (max size 2MB)</label>
       <div class="controls">
         <input type="file" id="registration-resume" name="resume"
                data-validation-callback-callback="resumeValidation"
-               required
                class="form-control">
         <p class="help-block">
           <!-- Gets filled with help messages from validation. -->
@@ -215,14 +213,57 @@
         <label for="registration-age">
           I am 18 years or older
         </label>
-    </div>
-    
-    <div id="registration-status">
-      <!-- Will be filled with loading spinner/status messages. -->
-    </div>
+      </div>
+      
+      <div id="registration-status">
+        <!-- Will be filled with loading spinner/status messages. -->
+      </div>
 
-    <button type="submit" class="btn btn-xl">
-      Sign me up!
-    </button>
+      <button type="submit" class="btn btn-xl">
+        Sign me up!
+      </button>
   </form>
 </section>
+
+<div class="modal fade"
+     id="registration-noresume"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="registration-noresume-label"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-header">
+      <h4 class="modal-title"
+          id="registration-noresume-label">
+        Do you want to register without a résumé?
+      </h4>
+    </div>
+
+    <div class="modal-body">
+      <p>
+        We strongly suggest registering with a résumé. First are foremost,
+        MinneHack is a recruiting event; submitting one will make you
+        a more attractive hire to our sponsors, mentors, and judges.
+      </p>
+
+      <p>
+        Submitting a résumé or not will have no effect on judging.
+      </p>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button"
+              class="btn btn-primary"
+              data-dismiss="modal"
+              id="registration-noresume-goback">
+        Go back
+      </button>
+      <button type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+              id="registration-noresume-register">
+        Register anyways
+      </button>
+    </div>
+  </div>
+</div>

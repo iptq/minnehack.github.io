@@ -79,6 +79,50 @@ $(function() {
         }
         return window.btoa( binary );
     }
+
+    function submit(data) {
+        console.log("Registering...");
+
+        $.ajax({
+            // This URL is to a Google Script-deployed application
+            // owned by the ACM UMN Google account.
+            url: "https://script.google.com/macros/s/AKfycbyGVjMfYrREpz4rwxFWWZzw983by5MDdiRbpub4nzw0Uc4CSI0k/exec",
+            method: "POST",
+            data: data,
+            dataType: "json",
+            success: function(response) {
+                console.log(response);
+                $('#registration-status').html(`
+                  <div class="alert alert-success">
+                    <strong>
+                      You're registered for MinneHack!
+                      We'll send you a reminder when the event gets closer.
+                    </strong>
+                    <button type="button" class="close" data-dismiss="alert"
+                            aria-hidden="true">
+                      &times;
+                    </button>
+                  </div>
+                `);
+            // clear form fields
+            $('#registration-form').trigger("reset");
+            },
+            error: function() {
+               $('#registration-status').html(`
+                 <div class="alert alert-danger">
+                   <strong>
+                     Sorry, your registration failed.
+                     Please try again later.
+                   </strong>
+                   <button type="button" class="close" data-dismiss="alert"
+                           aria-hidden="true">
+                     &times;
+                   </button>
+                 </div>
+               `);
+            }
+        });
+    }
     
     // Submit and validate registration form.
     $("#registration-form").find("input,textarea,select")
@@ -131,50 +175,6 @@ $(function() {
                 'eighteen': eighteen
             };
 
-            function submit(data) {
-                console.log("Registering...");
-                
-                $.ajax({
-                    // This URL is to a Google Script-deployed application
-                    // owned by the ACM UMN Google account.
-                    url: "https://script.google.com/macros/s/AKfycbyGVjMfYrREpz4rwxFWWZzw983by5MDdiRbpub4nzw0Uc4CSI0k/exec",
-                    method: "POST",
-                    data: data,
-                    dataType: "json",
-                    success: function(response) {
-                        console.log(response);
-                        $('#registration-status').html(`
-                          <div class="alert alert-success">
-                            <strong>
-                              You're registered for MinneHack!
-                              We'll send you a reminder when the event gets closer.
-                            </strong>
-                            <button type="button" class="close" data-dismiss="alert"
-                                    aria-hidden="true">
-                              &times;
-                            </button>
-                          </div>
-                        `);
-                    // clear form fields
-                    $('#registration-form').trigger("reset");
-                    },
-                    error: function() {
-                       $('#registration-status').html(`
-                         <div class="alert alert-danger">
-                           <strong>
-                             Sorry, your registration failed.
-                             Please try again later.
-                           </strong>
-                           <button type="button" class="close" data-dismiss="alert"
-                                   aria-hidden="true">
-                             &times;
-                           </button>
-                         </div>
-                       `);
-                    }
-                });
-            }
-
             if(resumeFiles.length > 0) {
                 console.log("Trying to submit with resume...");
                 var file = resumeFiles[0];
@@ -195,7 +195,14 @@ $(function() {
 
                 filereader.readAsArrayBuffer(file);
             } else {
-                submit(data);
+                $('#registration-status').children().hide();
+
+                $('#registration-noresume-register').on('click', function() {
+                    $('#registration-status').children().show();
+                    submit(data);
+                });
+                
+                $('#registration-noresume').modal();
             }
         },
         
