@@ -137,11 +137,12 @@ $(function() {
                 $.ajax({
                     // This URL is to a Google Script-deployed application
                     // owned by the ACM UMN Google account.
-                    url: "https://script.google.com/macros/s/AKfycbxz3xAhjkGae_wOqJcD18EWP_DAkI0mPMIS4yccmJG4VaMRKSM/exec",
+                    url: "https://script.google.com/macros/s/AKfycbyGVjMfYrREpz4rwxFWWZzw983by5MDdiRbpub4nzw0Uc4CSI0k/exec",
                     method: "POST",
                     data: data,
                     dataType: "json",
-                    success: function() {
+                    success: function(response) {
+                        console.log(response);
                         $('#registration-status').html(`
                           <div class="alert alert-success">
                             <strong>
@@ -185,8 +186,6 @@ $(function() {
 
                 data["resume-extension"] = extension;
 
-                console.log(data);
-                
                 var filereader = new FileReader();
                 filereader.onload = function() {
                     console.log("Finished reading file.");
