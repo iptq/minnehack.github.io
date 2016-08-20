@@ -2,17 +2,13 @@
 
 @charset "utf-8"
 
-form
-  max-width: 768px
-  margin-left: auto
-  margin-right: auto
-
-.require::before
-  color: #ff3333
-  font-weight: bold
-  font-size: 18px
-  margin-right: 5px
-  content: "*"
+@media not speech
+  .require::before
+    color: #ff3333
+    font-weight: bold
+    font-size: 18px
+    margin-right: 5px
+    content: "*"
 
 .checkoff
   display: table
