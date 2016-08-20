@@ -1,17 +1,17 @@
 $(function() {
-    $("#contactForm").find("input,textarea").jqBootstrapValidation({
+    $("#contact-form").find("input,textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitSuccess: function($form, event) {
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
-            var email = $("#contactForm").find("#contact-email").val();
-            var subject = $("#contactForm").find("#contact-subject").val();
+            var email = $("#contact-form").find("#contact-email").val();
+            var subject = $("#contact-form").find("#contact-subject").val();
             if(subject.length === 0) {
                 subject = "[MinneHack] " + email;
             } else {
                 subject = "[MinneHack] " + subject;
             }
-            var message = $("#contactForm").find("#contact-text").val();
+            var message = $("#contact-form").find("#contact-text").val();
 
             console.log("Sending email...");
 
@@ -39,7 +39,7 @@ $(function() {
                         </div>
                         `);
                     // clear form fields
-                    $('#contactForm').trigger("reset");
+                    $('#contact-form').trigger("reset");
                 },
                 error: function(xhr, error, exception) {
                     // Fail message
@@ -256,13 +256,4 @@ $(function() {
             dietOther.val(null);
         }
     });
-});
-
-/*When clicking on Full hide fail/success boxes */
-$('#registrationForm input#name').focus(function() {
-    $('#registration-status').html('');
-});
-
-$('#contactForm input#name').focus(function() {
-    $('#contact-status').html('');
 });
