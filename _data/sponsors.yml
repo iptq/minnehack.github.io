@@ -1,0 +1,16 @@
+bronze:
+silver:
+  - description: Target
+    image: img/logos/target-logo.png
+    url: https://corporate.target.com/careers
+  - description: IBM
+    image: img/logos/ibm-logo.png
+    url: http://www.ibm.com/employment
+  - description: Pantheon Website Management
+    image: img/logos/pantheon-logo.png
+    url: https://www.pantheon.io/careers
+  - description: Maverick Software Consulting
+    image: img/logos/maverick-logo.png
+    url: http://www.mavericksoftware.com/Students/Careers.aspx
+gold:
+platinum:
