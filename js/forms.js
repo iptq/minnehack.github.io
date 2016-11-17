@@ -95,8 +95,8 @@ $(function() {
                 $('#registration-status').html(`
                   <div class="alert alert-success">
                     <strong>
-                      You're registered for MinneHack!
-                      We'll send you a reminder when the event gets closer.
+                      You're signed up for the waitlist!
+                      We'll let you know if any spots open up.
                     </strong>
                     <button type="button" class="close" data-dismiss="alert"
                             aria-hidden="true">
@@ -111,7 +111,7 @@ $(function() {
                $('#registration-status').html(`
                  <div class="alert alert-danger">
                    <strong>
-                     Sorry, your registration failed.
+                     Sorry, your signup failed.
                      Please try again later.
                    </strong>
                    <button type="button" class="close" data-dismiss="alert"
