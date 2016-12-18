@@ -1,95 +1,25 @@
 <!-- About Section -->
-    <section id="schedule">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Schedule</h2>
-                    <h3 class="section-subheading text-muted">Check back for details and updates. They will be posted here as they become available.</h3>
-                </div>
+<section id="schedule">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+
+        <h2 class="section-heading">Schedule</h2>
+
+        <div id="schedule-table">
+          {% for e in site.data.schedule.hourly %}
+            <div class="event {% if e.important %}event-important{% endif %}">
+              <span class="event-time">
+                {{ e.time }}
+              </span>
+              <span class="event-name">
+                {{ e.event }}
+              </span>
             </div>
-            <div class="row">
-                <h4 class="text-center" style="color: #bcbcbc;">Coming soon.</h4>
-                <!-- <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/registration-table.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Saturday 5:00 PM</h4>
-                                    <h4 class="subheading">Arrival & Networking Event</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Check-in, get your badge,<br> find your team, and<br> get comfortable.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/bradthompson.png" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Saturday 6:00 PM</h4>
-                                    <h4 class="subheading">Keynote & Prompt Release</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Brad Thompson, Vice President of Portfolio Solutions at Target – presents the keynote. The ACM UMN team kickoff and logistics announced.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/guys3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                  <h4>Saturday 8:00 PM <hr> Sunday 3:00 PM </h4>
-                                    <h4 class="subheading">Open House</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Teams are let loose to hack: collaborate, create, learn, and explore. Make something awesome!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/lecture.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Sunday 3:00 PM</h4>
-                                    <h4 class="subheading">First Round of Judging Begins</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">The judging schedule is announced and teams start to pitch to the judge panels.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/trophy2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Sunday 4:30 PM</h4>
-                                    <h4 class="subheading">Final Round of Judging</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">The top teams make their final pitches in front of all the judges and MinneHack audience.  Winners are announced and prizes awarded!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image" style="border: 7px solid #{{ site.color.primary }};">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!</h4>
-                            </div>
-                        </li>
-                    </ul>
-                </div> -->
-            </div>
+          {% endfor %}
         </div>
-    </section>
+
+      </div>
+    </div>
+  </div>
+</section>
