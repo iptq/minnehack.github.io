@@ -14,32 +14,28 @@
       <div class="col-lg-12 text-center">
         {% assign platinum = site.data.sponsors.platinum %}
         {% if platinum %}
-          {% if platinum.url %}
-            <a href="{{ platinum.url }}"
-               title="{{ platinum.description }}">
-          {% endif %}
-            <img src="{{ platinum.image | prepend: site.baseurl }}"
-                 alt="{% if !platinum.url %}{{ platinum.description }}{% endif %}"
-                 class="sponsor sponsor-platinum"/>
-          {% if sponsor.url %}
-            </a>
-          {% endif %}
+          {% include sponsor.html sponsor=platinum tier="platinum" %}
         {% endif %}
       </div>
     </div>
     <div class="row padded-row">
       <div class="col-lg-12 text-center">
+        {% for sponsor in site.data.sponsors.gold %}
+          {% include sponsor.html sponsor=sponsor tier="gold" %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="row padded-row">
+      <div class="col-lg-12 text-center">
         {% for sponsor in site.data.sponsors.silver %}
-          {% if sponsor.url %}
-            <a href="{{ sponsor.url }}"
-               title="{{ sponsor.description }}">
-          {% endif %}
-            <img src="{{ sponsor.image | prepend: site.baseurl }}"
-                 alt="{% if !sponsor.url %}{{ sponsor.description }}{% endif %}"
-                 class="sponsor sponsor-silver"/>
-          {% if sponsor.url %}
-            </a>
-          {% endif %}
+          {% include sponsor.html sponsor=sponsor tier="silver" %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="row padded-row">
+      <div class="col-lg-12 text-center">
+        {% for sponsor in site.data.sponsors.bronze %}
+          {% include sponsor.html sponsor=sponsor tier="bronze" %}
         {% endfor %}
       </div>
     </div>
