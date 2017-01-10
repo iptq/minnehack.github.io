@@ -7,6 +7,10 @@ bronze:
     image: img/logos/theironyard-logo.png
     url: https://www.theironyard.com/
     squarelogo: true
+
+  - description: Underground Printing
+    image: img/logos/undergroundprinting-logo.jpg
+    url: https://undergroundshirts.com/
 silver:
   - description: Target
     image: img/logos/target-logo.png
