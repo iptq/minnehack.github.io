@@ -4,6 +4,9 @@ startdate: 28th
 enddate: 29th
 
 hourly:
+  - event: January 28th
+    important: true
+    time: 
   - event: Doors open/Check-in Begins
     important: true
     time: 5:00 PM
@@ -16,6 +19,9 @@ hourly:
     time: 8:00 PM
   - event: Dinner
     time: 8:30 PM
+  - event: January 29th
+    important: true
+    time: 
   - event: Mentor area closes
     time: 12:00 AM
   - event: Sleeping area opens
