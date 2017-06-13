@@ -1,10 +1,10 @@
-year: 2017
+year: 2018
 month: January
-startdate: 28th
-enddate: 29th
+startdate: 27th
+enddate: 28th
 
 hourly:
-  - event: January 28th
+  - event: January 27th
     important: true
     time: 
   - event: Doors open/Check-in Begins
