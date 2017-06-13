@@ -19,7 +19,7 @@ hourly:
     time: 8:00 PM
   - event: Dinner
     time: 8:30 PM
-  - event: January 29th
+  - event: January 28th
     important: true
     time: 
   - event: Mentor area closes
