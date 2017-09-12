@@ -8,10 +8,6 @@ index: true
 {% include schedule.html %}
 {% include faq.html %}
 {% include sponsors.html %}
-{% if site.data.links.register == "" %}
-	{% include register-not-open.html %}
-{% else %}
-	{% include register-closed.html %}
-{% endif %}
+{% include register-open.html %}
 {% include volunteer.html %}
 {% include contact.html %}
